@@ -134,10 +134,10 @@ function updateEnemy(enemy, dt) {
     const dist = Math.hypot(dx, dy);
 
     if (enemy.dashCooldown <= 0 && dist > 0) {
-      const speed = 12;
+      const speed = 15;
       enemy.vx = (dx / dist) * speed;
       enemy.vy = (dy / dist) * speed;
-      enemy.dashCooldown = 700;
+      enemy.dashCooldown = 500;
     }
   } else {
     enemy.vx *= 0.9;
@@ -380,7 +380,7 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
-setInterval(() => { if (enemies.length < 10) spawnEnemy(); }, 3000);
+setInterval(() => { if (enemies.length < 50) spawnEnemy(); }, 2500);
 gameLoop();
 </script>
 </body>
